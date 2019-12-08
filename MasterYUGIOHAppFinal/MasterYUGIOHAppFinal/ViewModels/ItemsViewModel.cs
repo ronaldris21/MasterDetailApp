@@ -1,19 +1,15 @@
-﻿using System;
+﻿using MasterYUGIOHAppFinal.Models;
+using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
-
-using MasterYUGIOHAppFinal.Models;
-using MasterYUGIOHAppFinal.Views;
 
 namespace MasterYUGIOHAppFinal.ViewModels
 {
-    public class ItemsViewModel : BaseViewModel
+    public class ItemsViewModel : MvvmHelpers.BaseViewModel
     {
         private MenuItemType ItemType;
-        public ObservableCollection<Item> Items { get; set; }
         public Command LoadItemsCommand { get; set; }
 
         public ItemsViewModel()
@@ -21,7 +17,7 @@ namespace MasterYUGIOHAppFinal.ViewModels
             IsBusy = true;
             ItemType = MenuItemType.link_monster_cards;
             Title = MenuItemType.link_monster_cards.ToString();
-            Items = new ObservableCollection<Item>();
+            //Cargo los datos del Json, primer tanda!
 
             //Aqui cargo los datos la primera vez!!!
             IsBusy = false;
@@ -33,7 +29,6 @@ namespace MasterYUGIOHAppFinal.ViewModels
         {
             ItemType = itemType;
             Title = itemType.ToString();
-            Items = new ObservableCollection<Item>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
         }
 
@@ -46,12 +41,8 @@ namespace MasterYUGIOHAppFinal.ViewModels
 
             try
             {
-                Items.Clear();
-                var items = await DataStore.GetItemsAsync(true);
-                foreach (var item in items)
-                {
-                    Items.Add(item);
-                }
+                //Aqui halo los datos que requiero
+
             }
             catch (Exception ex)
             {

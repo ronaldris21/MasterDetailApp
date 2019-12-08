@@ -6,6 +6,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="EmbededSources\YUGIOHCardsData.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="EmbededSources\YUGIOHCardsData.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="DLToolkit.Forms.Controls.FlowListView" Version="2.0.11" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="Refractored.MvvmHelpers" Version="1.3.0" />
