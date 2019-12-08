@@ -8,18 +8,6 @@
              x:Class="MasterYUGIOHAppFinal.Views.MenuPage"
              Title="Menu">
     
-<ContentPage.Resources>
-    <ResourceDictionary>
-        
-        
-            <Style TargetType="Label" x:Key="LabelTitle">
-                <Setter Property="FontSize" Value="Large"/>
-                <Setter Property="FontAttributes" Value="Bold"/>
-                <Setter Property="TextColor" Value="{StaticResource NavigationPrimary}"/>
-                <Setter Property="HorizontalOptions" Value="Center"/>
-            </Style>
-    </ResourceDictionary>
-</ContentPage.Resources>
    
     
              

@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MasterYUGIOHAppFinal.Services
+﻿namespace MasterYUGIOHAppFinal.Services
 {
+
+    using System;
+    using System.Diagnostics;
+    using System.IO;
+    using System.Reflection;
+    using System.Threading.Tasks;
     public static class JsonFilePath
     {
         private static string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
@@ -44,7 +42,7 @@ namespace MasterYUGIOHAppFinal.Services
             }
         }
 
-        public static async Task<T> ReadFromJsonEmbededFile<T>(string JsonFileEmbeded)
+        public async Task<T> ReadFromJsonEmbededFile<T>(string JsonFileEmbeded)
         {
             try
             {

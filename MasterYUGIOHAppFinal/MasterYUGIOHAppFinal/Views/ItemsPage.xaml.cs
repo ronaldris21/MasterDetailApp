@@ -21,5 +21,13 @@ namespace MasterYUGIOHAppFinal.Views
             InitializeComponent();
             BindingContext = new ItemsViewModel(type);
         }
+
+        private async void ToolbarItem_Clicked(object sender, System.EventArgs e)
+        {
+            await ((Views.MainPage)App.Current.MainPage).RisPushPage(new PagePruebasNavigation(
+                    ((Views.MainPage)App.Current.MainPage).RisCurrentStackPagesCount()
+                ));
+
+        }
     }
 }

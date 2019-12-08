@@ -6,8 +6,6 @@ namespace MasterYUGIOHAppFinal.Models
 {
     public enum MenuItemType
     {
-        AllCards,
-        MyCards,
         monster_cards,
         ritual_monster_cards,
         link_monster_cards,
